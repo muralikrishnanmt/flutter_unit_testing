@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:test_project/models/user_model.dart';
 import 'package:test_project/user_repository.dart';
 
@@ -10,7 +11,7 @@ class ApiPage extends StatefulWidget {
 }
 
 class _ApiPageState extends State<ApiPage> {
-  Future<User> getUser = UserRepository().getUser();
+  Future<User> getUser = UserRepository(Client()).getUser();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
